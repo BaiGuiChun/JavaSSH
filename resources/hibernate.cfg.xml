@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:mysql://localhost:3306/ssh</property>
+    <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+    <property name="connection.useUnicode">true</property>
+    <property name="connection.characterEncoding">UTF-8</property>
+    <property name="hibernate.query.factory_class">org.hibernate.hql.classic.ClassicQueryTranslatorFactory</property>
+
+      <mapping class="com.ssh.model.User"/>
+    <mapping resource="hbm/User.hbm.xml"/>
+    <mapping class="com.ssh.model.User"/>
+    <mapping class="com.ssh.model.User"/>
+      <mapping resource="hbm/SysDictionaries.hbm.xml"/>
+      <mapping class="com.ssh.model.SysDictionaries"/>
+      <mapping class="com.ssh.model.SysDictionaries"/>
+      <mapping class="com.ssh.model.SysDictionaries"/>
+      <mapping class="com.ssh.model.SysDictionaries"/>
+      <mapping resource="hbm/Customer.hbm.xml"/>
+      <mapping class="com.ssh.model.Customer"/>
+    <mapping resource="hbm/Commodity.hbm.xml"/>
+    <mapping class="com.ssh.model.Commodity"/>
+      <mapping resource="hbm/CustComm.hbm.xml"/>
+      <mapping class="com.ssh.model.CustComm"/>
+    <mapping resource="hbm/Commodity.hbm.xml"/>
+    <mapping class="com.ssh.model.Commodity"/>
+      <mapping class="com.ssh.model.Customer"/>
+      <mapping resource="hbm/Customer.hbm.xml"/>
+      <!-- <property name="connection.username"/> -->
+    <!-- <property name="connection.password"/> -->
+
+    <!-- DB schema will be updated if needed -->
+    <!-- <property name="hbm2ddl.auto">update</property> -->
+  </session-factory>
+</hibernate-configuration>

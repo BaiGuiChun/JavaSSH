@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.ssh.model.CustComm" table="cust_comm" schema="ssh">
+        <id name="ccId" column="CC_ID"/>
+        <property name="custId" column="CUST_ID"/>
+        <property name="commId" column="COMM_ID"/>
+        <property name="state" column="STATE"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- constant 配置 -->
+	<!-- 用于设置默认的本地编码 -->
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<!--设置浏览器是否缓存静态内容，建议：开发阶段关闭，运行时开启 -->
+	<constant name="struts.serve.static.browserCache" value="false" />
+	<!--当struts.xml配置文件修改后，系统是否重新加载该文件，开发阶段打开此功能 -->
+	<constant name="struts.configuration.xml.reload" value="true" />
+	<!-- 开发提示：出错时打印更详细的信息，开发阶段打开此功能 -->
+	<constant name="struts.devMode" value="true" />
+
+	<constant name="struts.objectFactory" value="spring"/>
+
+<!--	默认是action 但是太长了，不想用-->
+	<constant name="struts.action.extension" value="do"/>
+
+	<package name="struts2" namespace="/" extends="struts-default">
+		<action name="sys_*" class="userAction" method="{1}">
+			<result name="input">/jsp/web/sys/login.jsp</result>
+			<result name="success" type="redirect">/jsp/web/index.jsp</result>
+			<result name="index">index.jsp</result>
+		</action>
+
+		<!--字典基础数据  增 删 查 改-->
+		<action name="dict_*" class="dictAction" method="{1}">
+			<result name="findAll">/jsp/web/dict/list.jsp</result>
+			<result name="saveJSP">/jsp/web/dict/add.jsp</result>
+			<result name="save" type="redirectAction">dict_findAll.do</result>
+			<result name="editJSP">/jsp/web/dict/edit.jsp</result>
+			<result name="update" type="redirectAction">dict_findAll.do</result>
+			<result name="delete" type="redirectAction">dict_findAll.do</result>
+		</action>
+
+        <!--客户基础数据 增 删 查 改-->
+		<action name="cust_*" class="custAction" method="{1}">
+			<result name="findAll">/jsp/web/cust/list.jsp</result>
+			<result name="saveJSP">/jsp/web/cust/add.jsp</result>
+			<result name="save" type="redirectAction">cust_findAll.do</result>
+			<result name="editJSP">/jsp/web/cust/edit.jsp</result>
+			<result name="update" type="redirectAction">cust_findAll.do</result>
+			<result name="delete" type="redirectAction">cust_findAll.do</result>
+
+			<result name="dataBack">/jsp/web/maintenance/index.jsp</result>
+		</action>
+
+		<!--商品基础数据  增 删 查 改-->
+		<action name="comm_*" class="commAction" method="{1}">
+			<result name="findAll">/jsp/web/comm/list.jsp</result>
+			<result name="saveJSP">/jsp/web/comm/add.jsp</result>
+			<result name="save" type="redirectAction">comm_findAll.do</result>
+			<result name="editJSP">/jsp/web/comm/edit.jsp</result>
+			<result name="update" type="redirectAction">comm_findAll.do</result>
+			<result name="delete" type="redirectAction">comm_findAll.do</result>
+
+			<result name="dataBack">/jsp/web/maintenance/index.jsp</result>
+		</action>
+
+<!--        &lt;!&ndash;inventory-库存 订单业务&ndash;&gt;-->
+<!--		<action name="inv_*" class="invAction" method="{1}">-->
+<!--			<result name="jump">/WEB-INF/jsp/web/inventory/.jsp</result>-->
+
+<!--		</action>-->
+
+        <!--maintenance-维修 订单业务-->
+		<action name="mai_*" class="maiAction" method="{1}">
+			<result name="maiJSP">/jsp/web/maintenance/index.jsp</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.ssh.model.SysDictionaries" table="sys_dictionaries" schema="ssh">
+        <id name="dictId" column="DICT_ID"/>
+        <property name="name" column="NAME"/>
+        <property name="bz" column="BZ"/>
+        <property name="parentId" column="PARENT_ID"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.ssh.model.Commodity" table="commodity" schema="ssh">
+        <id name="commid" column="COMMID"/>
+        <property name="coname" column="CONAME"/>
+        <property name="company" column="COMPANY"/>
+        <property name="plaofo" column="PLAOFO"/>
+        <property name="price" column="PRICE"/>
+    </class>
+</hibernate-mapping>

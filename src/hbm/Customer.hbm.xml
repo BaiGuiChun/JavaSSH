@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.ssh.model.Customer" table="customer" schema="ssh">
+        <id name="custId" column="CUST_ID"/>
+        <property name="cuname" column="CUNAME"/>
+        <property name="phone" column="PHONE"/>
+        <property name="cardid" column="CARDID"/>
+        <property name="address" column="ADDRESS"/>
+        <property name="gender" column="GENDER"/>
+    </class>
+</hibernate-mapping>
